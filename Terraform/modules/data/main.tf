@@ -26,7 +26,7 @@ resource "aws_elasticache_subnet_group" "redis" {
   subnet_ids = var.data_subnet_ids
 }
 
-resource "elasticache_cluster" "redis" {
+resource "aws_elasticache_cluster" "redis" {
   cluster_id           = "${var.env}-redis"
   engine               = "redis"
   node_type            = "cache.t3.micro"

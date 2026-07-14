@@ -29,7 +29,7 @@ module "compute" {
   private_subnet_ids     = module.vpc.private_app_subnet_ids
   alb_sg_id              = module.security_groups.alb_sg_id
   web_sg_id              = module.security_groups.web_sg_id
-  backend_sg_id          = module.security_groups.backend_sg.id
+  backend_sg_id          = module.security_groups.backend_sg_id
   domain_name            = var.domain_name
   web_cdn_domain_name    = module.cloudfront.web_cdn_domain_name
   web_cdn_hosted_zone_id = module.cloudfront.web_cdn_zone_id
@@ -38,7 +38,7 @@ module "compute" {
 module "data" {
   source          = "./modules/data"
   env             = var.env
-  data_subnet_ids = module.vpc.private_data.subnet_ids
+  data_subnet_ids = module.vpc.private_data_subnet_ids
   rds_sg_id       = module.security_groups.rds_sg_id
   redis_sg_id     = module.security_groups.redis_sg_id
 }

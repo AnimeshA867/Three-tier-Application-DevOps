@@ -23,7 +23,7 @@ resource "aws_security_group" "alb" {
 
 resource "aws_security_group" "web" {
   name   = "${var.env}-web-sg"
-  vpc_id = var.vpc.id
+  vpc_id = var.vpc_id
   ingress {
     from_port       = 80
     to_port         = 80
