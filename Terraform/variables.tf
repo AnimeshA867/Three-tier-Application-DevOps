@@ -6,3 +6,4 @@ variable "private_app_cidrs" { type = list(string) }
 variable "private_data_cidrs" { type = list(string) }
 variable "azs" { type = list(string) }
 variable "domain_name" {}
+

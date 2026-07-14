@@ -40,8 +40,8 @@ resource "aws_route53_record" "www" {
   name    = "www.${var.domain_name}"
   type    = "A"
   alias {
-    name                   = aws_lb.external_alb.dns_name
-    zone_id                = aws_lb.external_alb.zone_id
+    name                   = var.web_cdn_domain_name
+    zone_id                = var.web_cdn_hosted_zone_id
     evaluate_target_health = true
   }
 }
